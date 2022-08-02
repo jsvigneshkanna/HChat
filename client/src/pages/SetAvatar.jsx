@@ -7,10 +7,9 @@ import loader from "../assets/loader.gif";
 import axios from "axios";
 import { setAvatarRoute } from "../utils/APIRoutes";
 import { Buffer } from "buffer";
-require("dotenv").config();
 
 function SetAvatar() {
-  const api = "https://api.multiavatar.com";
+  const api = process.env.REACT_APP_PROFILE_API;
   const navigate = useNavigate();
 
   const [avatars, setAvatars] = useState([]);

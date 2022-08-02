@@ -24,13 +24,13 @@ const Button = styled.button`
   align-items: center;
   padding: 0.5rem;
   border-radius: 0.5rem;
-  background-color: #9a86f3;
-  border: none;
+  background-color: #a7e3ff;
+  border: 0.15rem solid black;
   cursor: pointer;
 
   svg {
     font-size: 1.3rem;
-    color: #ebe7ff;
+    color: #000;
   }
 `;
 

@@ -6,4 +6,4 @@
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white) 
 ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
 
-### A Realtime Chat application built on **MERN** stack, using **ReactJS** for front-end and **Node.JS** for back-end using **MongoDB Atlas** as database
+A Realtime Chat application built on **MERN** stack, using **ReactJS** for front-end and **Node.JS** for back-end using **MongoDB Atlas** as database

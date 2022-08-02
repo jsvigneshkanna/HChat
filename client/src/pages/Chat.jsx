@@ -88,11 +88,13 @@ const Container = styled.div`
   justify-content: center;
   gap: 1rem;
   align-items: center;
-  background-color: #131324;
+  background-color: #b8effd;
 
   .container {
     height: 85vh;
     width: 85vw;
+    border: 0.2rem solid black;
+    border-radius: 2rem;
     background-color: #00000076;
     display: grid;
     grid-template-columns: 25% 75%;

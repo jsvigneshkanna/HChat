@@ -55,9 +55,10 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 5% 95%;
   align-items: center;
-  background-color: #080420;
+  background-color: #ffc88a;
   padding: 0 2rem;
   padding-bottom: 0.3rem;
+  border-top: 0.2rem solid black;
   @media screen and (min-width: 720px) and (max-width: 1080px) {
     padding: 0 1rem;
     gap: 1rem;
@@ -74,23 +75,23 @@ const Container = styled.div`
 
       svg {
         font-size: 1.5rem;
-        color: #ffff00c8;
+        color: #000000;
         cursor: pointer;
       }
 
       .emoji-picker-react {
         position: absolute;
         top: -350px;
-        background-color: #080420;
-        box-shadow: 0 5px 10px #9a86f3;
-        border-color: #9186f3;
+        background-color: #000000;
+        box-shadow: 0 5px 10px #121820;
+        border-color: #fff;
 
         .emoji-scroll-wrapper::-webkit-scrollbar {
           background-color: #080420;
           width: 5px;
 
           &-thumb {
-            background-color: #9a86f3;
+            background-color: #5a5a5a;
           }
         }
 
@@ -102,11 +103,11 @@ const Container = styled.div`
 
         .emoji-search {
           background-color: transparent;
-          border-color: #9186f3;
+          border-color: #86e3f3;
         }
 
         .emoji-group::before {
-          background-color: #080420;
+          background-color: #000000;
         }
       }
     }
@@ -118,7 +119,8 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     gap: 2rem;
-    background-color: #ffffff34;
+    background-color: #ffffff;
+    border: 0.2rem solid black;
 
     input {
       width: 90%;
@@ -140,12 +142,13 @@ const Container = styled.div`
 
     button {
       padding: 0.3rem 2rem;
-      border-radius: 2rem;
+      border-radius: 0 2rem 2rem 0;
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #9a86f3;
+      background-color: #4668ff;
       border: none;
+      border-left: 0.2rem solid black;
 
       @media screen and (min-width: 720px) and (max-width: 1080px) {
         padding: 0.3rem 1rem;

@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import ChatInput from "./ChatInput";
@@ -78,7 +79,7 @@ function ChatContainer({ currentChat, currentUser, socket }) {
                 <h3> {currentChat.username} </h3>
               </div>
             </div>
-            <Logout />
+            {/* <Logout /> */}
           </div>
           <div className="chat-messages">
             {messages.map((message, index) => {
@@ -105,11 +106,12 @@ function ChatContainer({ currentChat, currentUser, socket }) {
 }
 
 const Container = styled.div`
-  padding-top: 1rem;
   display: grid;
-  grid-template-rows: 10% 78% 12%;
+  grid-template-rows: 10.3% 74.8% 15.2%;
   gap: 0.1rem;
   overflow: hidden;
+  background-color: white;
+  border-radius: 0 1.9rem 1.9rem 0;
   /* @media screen and (min-width: 720px) and (max-width: 1080px) {
     grid-template-rows: 15% 17% 15%;
   } */
@@ -119,6 +121,9 @@ const Container = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
+    padding-top: 1rem;
+    background-color: #ff6262;
+    border-bottom: 0.2rem solid black;
 
     .user-details {
       display: flex;
@@ -128,12 +133,14 @@ const Container = styled.div`
       .avatar {
         img {
           height: 3rem;
+          border: 0.15rem solid black;
+          border-radius: 50%;
         }
       }
 
       .username {
         h3 {
-          color: white;
+          color: black;
         }
       }
     }
@@ -145,6 +152,7 @@ const Container = styled.div`
     flex-direction: column;
     gap: 1rem;
     overflow: auto;
+    background-color: #5b65ff;
     &::-webkit-scrollbar {
       width: 0.2rem;
       &-thumb {
@@ -164,21 +172,22 @@ const Container = styled.div`
         padding: 1rem;
         font-size: 1.1rem;
         border-radius: 1rem;
-        color: #d1d1d1;
+        color: #000000;
+        border: 0.2rem solid black;
       }
     }
 
     .sent {
       justify-content: flex-end;
       .content {
-        background-color: #4f04ff21;
+        background-color: #a1f88b;
       }
     }
 
     .recieved {
       justify-content: flex-start;
       .content {
-        background-color: #9900ff20;
+        background-color: #ffffff;
       }
     }
   }

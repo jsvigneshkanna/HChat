@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import Logout from "./Logout";
 
 function Contacts({ contacts, currentUser, changeChat }) {
   const [currentUserName, setCurrentUserName] = useState(undefined);
@@ -50,15 +51,18 @@ function Contacts({ contacts, currentUser, changeChat }) {
             })}
           </div>
           <div className="current-user">
-            <div className="avatar">
-              <img
-                src={`data:image/svg+xml;base64,${currentUserImage}`}
-                alt="avatar"
-              />
+            <div className="user">
+              <div className="avatar">
+                <img
+                  src={`data:image/svg+xml;base64,${currentUserImage}`}
+                  alt="avatar"
+                />
+              </div>
+              <div className="username">
+                <h2> {currentUserName} </h2>
+              </div>
             </div>
-            <div className="username">
-              <h2> {currentUserName} </h2>
-            </div>
+            <Logout />
           </div>
         </Container>
       )}
@@ -70,7 +74,9 @@ const Container = styled.div`
   display: grid;
   grid-template-rows: 10% 75% 15%;
   overflow: hidden;
-  background-color: #080420;
+  background-color: #6cc9ff;
+  border-radius: 1.8rem 0 0 1.8rem;
+  border-right: 0.2rem solid black;
 
   .brand {
     display: flex;
@@ -83,8 +89,10 @@ const Container = styled.div`
     }
 
     h3 {
-      color: white;
+      color: black;
       text-transform: uppercase;
+      font-family: "Iceland", cursive;
+      font-size: 3rem;
     }
   }
 
@@ -104,11 +112,12 @@ const Container = styled.div`
     }
 
     .contact {
-      background-color: #ffffff39;
+      background-color: #bbffae;
       min-height: 5rem;
       width: 90%;
       cursor: pointer;
-      border-radius: 0.2rem;
+      border: 0.2rem solid black;
+      border-radius: 1rem;
       padding: 0.4rem 0.4rem;
       gap: 1rem;
       align-items: center;
@@ -118,36 +127,50 @@ const Container = styled.div`
       .avatar {
         img {
           height: 3rem;
+          border: 0.15rem solid black;
+          border-radius: 1.5rem;
         }
       }
 
       .username {
         h3 {
-          color: white;
+          color: #000000;
         }
       }
     }
 
     .selected {
-      background-color: #9186f3;
+      background-color: #86f38b;
     }
   }
 
   .current-user {
-    background-color: #0d0d30;
+    background-color: #fff06b;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 2rem;
-    .avatar {
-      img {
-        height: 4rem;
-        max-inline-size: 100%;
+    border-top: 0.2rem solid black;
+    padding: 0 2rem;
+
+    .user {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+
+      .avatar {
+        img {
+          height: 4rem;
+          max-inline-size: 100%;
+          border: 0.15rem solid black;
+          border-radius: 50%;
+        }
       }
-    }
-    .username {
-      h2 {
-        color: white;
+      .username {
+        h2 {
+          color: #000000;
+        }
       }
     }
 

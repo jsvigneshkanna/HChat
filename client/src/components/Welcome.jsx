@@ -21,12 +21,14 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  color: white;
+  background-color: white;
+  border-radius: 0 1.9rem 1.9rem 0;
+  color: black;
   img {
     height: 20rem;
   }
   span {
-    color: #4e0eff;
+    color: #ff9100;
   }
 `;
 
