@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import Robot from "../assets/loader.gif";
+import Loader from "../assets/cat_2.gif";
 
 function Welcome({ currentUser }) {
   return (
     <>
       <Container>
-        <img src={Robot} alt="Robot" />
+        <img src={Loader} alt="Robot" />
         <h1>
           Welcome, <span>{currentUser.username}!</span>
         </h1>

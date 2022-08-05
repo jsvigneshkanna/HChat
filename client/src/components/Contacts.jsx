@@ -140,7 +140,19 @@ const Container = styled.div`
     }
 
     .selected {
-      background-color: #86f38b;
+      background-color: #5b65ff;
+
+      .avatar {
+        img {
+          border-color: white;
+        }
+      }
+
+      .username {
+        h3 {
+          color: white;
+        }
+      }
     }
   }
 

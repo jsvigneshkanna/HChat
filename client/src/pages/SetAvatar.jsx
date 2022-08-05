@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import loader from "../assets/loader.gif";
+import loader from "../assets/hololive.gif";
 import axios from "axios";
 import { setAvatarRoute } from "../utils/APIRoutes";
 import { Buffer } from "buffer";
@@ -118,7 +118,7 @@ const Container = styled.div`
   align-items: center;
   flex-direction: column;
   gap: 3rem;
-  background-color: #131324;
+  background-color: #2a2a52;
   height: 100vh;
   width: 100vw;
   .loader {
@@ -147,13 +147,13 @@ const Container = styled.div`
       }
     }
     .selected {
-      border: 0.4rem solid #4e0eff;
+      border: 0.4rem solid #ff7a0e;
     }
   }
 
   .submit-btn {
-    background-color: #997af0;
-    color: white;
+    background-color: #f0e47a;
+    color: #000000;
     padding: 1rem 2rem;
     border: none;
     font-weight: bold;
@@ -163,7 +163,7 @@ const Container = styled.div`
     text-transform: uppercase;
     transition: 0.5s ease-in-out;
     &:hover {
-      background-color: #4e0eff;
+      background-color: #f0da19;
     }
   }
 `;

@@ -7,6 +7,7 @@ import { allUsersRoute, host } from "../utils/APIRoutes";
 import Welcome from "../components/Welcome";
 import ChatContainer from "../components/ChatContainer";
 import { io } from "socket.io-client";
+import loader from "../assets/wojak-loading-wojak.gif";
 
 function Chat() {
   const navigate = useNavigate();
@@ -17,6 +18,7 @@ function Chat() {
   const [currentUser, setCurrentUser] = useState(undefined);
   const [currentChat, setCurrentChat] = useState(undefined);
   const [isLoaded, setIsloaded] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const getUser = async () => {
@@ -37,6 +39,7 @@ function Chat() {
         if (currentUser.isAvatarImageSet) {
           const data = await axios.get(`${allUsersRoute}/${currentUser._id}`);
           setContacts(data.data);
+          setIsLoading(false);
         }
       }
     };
@@ -56,7 +59,11 @@ function Chat() {
 
   return (
     <>
-      {currentUser && (
+      {isLoading ? (
+        <Container>
+          <img src={loader} alt="loader" className="loader" />
+        </Container>
+      ) : (
         <Container>
           <div className="container">
             <Contacts
