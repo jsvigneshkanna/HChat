@@ -7,9 +7,11 @@ import loader from "../assets/hololive.gif";
 import axios from "axios";
 import { setAvatarRoute } from "../utils/APIRoutes";
 import { Buffer } from "buffer";
+import Reload from "../components/Reload";
 
 function SetAvatar() {
   const api = process.env.REACT_APP_PROFILE_API;
+  const apiKey = process.env.REACT_APP_API_KEY;
   const navigate = useNavigate();
 
   const [avatars, setAvatars] = useState([]);
@@ -25,7 +27,9 @@ function SetAvatar() {
   };
 
   const setProfilePicture = async () => {
+    setIsLoading(true);
     if (selectedAvatar === undefined) {
+      setIsLoading(false);
       toast.error("Please Select and avatar", toastOptions);
     } else {
       const user = await JSON.parse(localStorage.getItem("chat-app-user"));
@@ -39,6 +43,7 @@ function SetAvatar() {
         localStorage.setItem("chat-app-user", JSON.stringify(user));
         navigate("/");
       } else {
+        setIsLoading(false);
         toast.error("Error setting Avatar. Please try again", toastOptions);
       }
     }
@@ -62,7 +67,7 @@ function SetAvatar() {
       const data = [];
       for (let i = 0; i < 4; i++) {
         const image = await axios.get(
-          `${api}/${Math.round(Math.random() * 1000)}?apikey=zSTqlO8r7QAxUj`
+          `${api}/${Math.round(Math.random() * 1000)}?apikey=${apiKey}`
         );
         const buffer = new Buffer(image.data);
         data.push(buffer.toString("base64"));
@@ -102,9 +107,12 @@ function SetAvatar() {
               );
             })}
           </div>
-          <button className="submit-btn" onClick={setProfilePicture}>
-            Set as Profile Picture
-          </button>
+          <div className="submit">
+            <button className="submit-btn" onClick={setProfilePicture}>
+              Set as Profile Picture
+            </button>
+            <Reload />
+          </div>
         </Container>
       )}
       <ToastContainer />
@@ -149,6 +157,11 @@ const Container = styled.div`
     .selected {
       border: 0.4rem solid #ff7a0e;
     }
+  }
+
+  .submit {
+    display: flex;
+    gap: 2rem;
   }
 
   .submit-btn {
