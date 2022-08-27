@@ -7,6 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
   },
+  "keywords":[
+    "heroku"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -17,5 +20,8 @@
     "mongoose": "^6.4.6",
     "nodemon": "^2.0.19",
     "socket.io": "^4.5.1"
+  },
+  "engines":{
+    "node":"16.x"
   }
 }
