@@ -47,3 +47,5 @@ $ npm install
 $ npm start
 ```
 The App will run in https://localhost:3000
+
+### **See the app in action [here](https://h-chat.vercel.app)**

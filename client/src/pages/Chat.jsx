@@ -7,7 +7,7 @@ import { allUsersRoute, host } from "../utils/APIRoutes";
 import Welcome from "../components/Welcome";
 import ChatContainer from "../components/ChatContainer";
 import { io } from "socket.io-client";
-import loader from "../assets/wojak-loading-wojak.gif";
+import loader from "../assets/hololive.gif";
 
 function Chat() {
   const navigate = useNavigate();
